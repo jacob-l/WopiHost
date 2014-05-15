@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (ViewBag.LocalhostWarning)
+{
+    <h3 style="color: red">Warning:</h3>
+    <p>Your current address is used to build WOPISrc file url.
+        OWA server can not access to your WopiHost application via localhost.
+        Please, be sure that WopiHost can be accessed from your network.
+    </p>
+}
+
+<h2>Press any link to view file:</h2>
+
+<ul>
+    @foreach (var item in ViewBag.Files)
+    {
+        <li><a href="@item.Url">@item.Name</a></li>
+    }
+</ul>
+
+There are all supported files from App_Data folder
